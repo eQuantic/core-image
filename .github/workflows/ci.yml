@@ -2,9 +2,9 @@ name: CI
 
 on:
   pull_request:
-    branches: [main]
+    branches: [main, preview]
   push:
-    branches: [main]
+    branches: [main, preview]
 
 permissions:
   contents: read
@@ -19,14 +19,9 @@ jobs:
         with:
           dotnet-version: '10.0.x'
 
-      # The engine is this repository's own: a package under src/ references no package at all.
-      - name: The packages reference nothing but the base class library
-        run: |
-          if grep -rln --exclude-dir=bin --exclude-dir=obj --include='*.csproj' --include='*.props' --include='*.targets' 'PackageReference' src/; then
-            echo "::error::A project under src/ references a package; the engine depends on the base class library alone"
-            exit 1
-          fi
-
+      # The engine is this repository's own: src/Directory.Build.targets fails the restore of any
+      # project under src/ whose evaluated references hold a package (error EQIMG001), wherever the
+      # reference was declared. Restore runs it for every project in the solution.
       - name: Restore
         run: dotnet restore
 
