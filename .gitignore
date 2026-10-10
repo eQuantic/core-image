@@ -1,0 +1,12 @@
+bin/
+obj/
+artifacts/
+*.user
+.vs/
+.idea/
+*.DotSettings.user
+TestResults/
+.DS_Store
+
+# The pinned OpenSpec CLI (tools/openspec), installed by npm ci.
+node_modules/

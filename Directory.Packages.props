@@ -1,0 +1,11 @@
+<Project>
+  <!--
+    The packages under src/ reference nothing but the .NET base class library: the codecs, the
+    transforms and the effects are this repository's own. Only the tests take packages.
+  -->
+  <ItemGroup Label="Tests">
+    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="18.10.1" />
+    <PackageVersion Include="xunit" Version="2.9.3" />
+    <PackageVersion Include="xunit.runner.visualstudio" Version="4.0.0" />
+  </ItemGroup>
+</Project>
