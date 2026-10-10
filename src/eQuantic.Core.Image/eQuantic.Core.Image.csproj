@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>Image manipulation for .NET on its own engine, with no native or third-party dependency: decoding and encoding, metadata, transforms, web optimization and effects, in managed code.</Description>
+    <PackageTags>image;imaging;resize;crop;jpeg;png;webp;gif;bmp;thumbnail;optimization</PackageTags>
+    <IsPackable>true</IsPackable>
+    <!-- Managed code only, so it trims and compiles ahead of time; the analyzers hold it to that. -->
+    <IsAotCompatible>true</IsAotCompatible>
+  </PropertyGroup>
+
+</Project>

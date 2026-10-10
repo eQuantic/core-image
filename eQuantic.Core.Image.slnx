@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/eQuantic.Core.Image/eQuantic.Core.Image.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/eQuantic.Core.Image.Tests/eQuantic.Core.Image.Tests.csproj" />
+  </Folder>
+</Solution>
